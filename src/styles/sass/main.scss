@@ -1,10 +1,139 @@
+// variables
+:root {
+	--padding: 1.5rem;
+	--green: #329c42;
+}
+
 * {
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
 	line-height: 1.4;
+	text-decoration: none;
+	list-style-type: none;
+	color: inherit;
+}
+
+* + * {
+	margin-top: 1.5rem;
 }
 
 html {
 	font-size: 18px;
+	font-family: sans-serif;
+}
+
+body, #root {
+	margin: 0;
+}
+
+header {
+	background-color: var(--green);
+	color: #fff;
+	text-align: center;
+	overflow: hidden;
+
+	button {
+		margin: 0 .5rem;
+	}
+}
+
+button {
+	padding: 0;
+	background-color: transparent;
+	border: none;
+	font-weight: 600;
+	font-size: .8rem;
+	text-transform: uppercase;
+}
+
+h3 {
+	text-transform: uppercase;
+	font-weight: 300;
+}
+
+// Utility Classes
+
+.container {
+	max-width: 1000px;
+	margin: 2rem auto;
+	padding: 2rem var(--padding);
+}
+
+.no-margin {
+	margin: 0 auto;
+}
+
+// event styles
+
+.event {
+	background-color: var(--green);
+	color: #fff;
+	padding: 2rem var(--padding);
+	box-shadow: 4px 2px 2px #00000045;
+
+	button {
+		margin-right: .5rem;
+	}
+}
+
+dl {
+	margin: 0;
+}
+
+dt, dd {
+	display: inline-block;
+	margin-right: .25rem;
+}
+
+dd {
+	margin-right: 1rem;
+}
+
+// form styles
+
+form {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+	grid-gap: 1rem;
+
+	div {
+		margin-top: 0;
+	}
+
+	button {
+		justify-self: flex-start;
+		background-color: var(--green);
+		color: #fff;
+		padding: .5rem 1rem;
+		border-radius: 2px;
+	}
+}
+
+label {
+	font-size: .6rem;
+	font-weight: 600;
+	text-transform: uppercase;
+}
+
+select, input {
+	margin-top: 0;
+	display: block;
+}
+
+input {
+	width: 100%;
+}
+
+input[type=checkbox] {
+	width: auto;
+}
+
+// footer styles
+
+footer {
+	background-color: var(--green);
+	overflow: hidden;
+	color: #fff;
+	text-align: center;
 }

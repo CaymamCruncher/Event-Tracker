@@ -138,6 +138,17 @@
 		"rFN": 0,
 		"uCM": 0
 		},
+	"/src/api/api-min.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/src/api/api-min-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
 	"/src/api/api.js": {
 		"bF": 0,
 		"ft": 64,
@@ -149,6 +160,28 @@
 		"sC": 3,
 		"tS": 0
 		},
+	"/src/components/AddEvent.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "/src/components/AddEvent-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 1
+		},
+	"/src/components/App-min.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/src/components/App-min-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
 	"/src/components/App.js": {
 		"bF": 0,
 		"ft": 64,
@@ -156,9 +189,53 @@
 		"mi": 1,
 		"oA": 0,
 		"oAP": "/src/components/App-min.js",
+		"oF": 1,
+		"sC": 0,
+		"tS": 1
+		},
+	"/src/components/Event-min.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/src/components/Event-min-min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
+		},
+	"/src/components/Event.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/src/components/Event-min.js",
+		"oF": 1,
+		"sC": 0,
+		"tS": 1
+		},
+	"/src/components/ListEvents-min.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/src/components/ListEvents-min-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"/src/components/ListEvents.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/src/components/ListEvents-min.js",
+		"oF": 1,
+		"sC": 0,
+		"tS": 1
 		},
 	"/src/index-min.js": {
 		"bF": 0,
@@ -179,8 +256,18 @@
 		"oA": 0,
 		"oAP": "/src/index-min.js",
 		"oF": 0,
-		"sC": 3,
+		"sC": 0,
 		"tS": 1
+		},
+	"/src/styles/css/main.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/src/styles/css/main-min.css",
+		"oF": 0,
+		"oS": 3
 		},
 	"/src/styles/sass/main.scss": {
 		"aP": 0,
