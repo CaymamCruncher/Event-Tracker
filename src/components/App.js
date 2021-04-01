@@ -1,37 +1,17 @@
 import '../styles/css/main.css';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ListEvents from './ListEvents';
 import AddEvent from './AddEvent';
+import { getEvents } from '../api/api';
 
 function App() {
-	const [events, changeEvents] = useState([
-		{
-			'id': 0,
-			'type': 'indoor walker',
-			'distance': 100,
-			'distanceType': 'Feet',
-			'time': '1:30',
-			'status': true
-		},
-		{
-			'id': 1,
-			'type': 'run',
-			'distance': 3,
-			'distanceType': 'Miles',
-			'time': '1:60',
-			'status': false
-		},
-		{
-			'id': 2,
-			'type': 'bike ride',
-			'distance': 6,
-			'distanceType': 'Miles',
-			'time': '2:60',
-			'status': false
-		}
-	]);
+	const [events, changeEvents] = useState([]);
 	const [shownEvents, changeShownEvents] = useState('all');
 	const [showAddEvent, changeShowAddEvent] = useState(false);
+
+	useEffect(() => {
+		getEvents().then((events) => changeEvents(events));
+	}, []);
 
 	function deleteEvent(id) {
 		changeEvents(events.filter((event) => event.id !== id));
