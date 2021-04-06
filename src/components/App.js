@@ -2,7 +2,7 @@ import '../styles/css/main.css';
 import React, { useState, useEffect } from 'react';
 import ListEvents from './ListEvents';
 import AddEvent from './AddEvent';
-import { getEvents } from '../api/api';
+import { getEvents, addServerEvent, deleteServerEvent, completeServerEvent } from '../api/api';
 
 function App() {
 	const [events, changeEvents] = useState([]);
@@ -14,15 +14,17 @@ function App() {
 	}, []);
 
 	function deleteEvent(id) {
-		changeEvents(events.filter((event) => event.id !== id));
+		deleteServerEvent(id).then((events) => changeEvents(events));
 	}
 
 	function addEvent(event) {
-		changeEvents([...events, event]);
+		addServerEvent(event).then((event) => {
+			changeEvents([...events, event]);
+		})
 	}
 
 	function completeEvent(id) {
-		changeEvents(events.map((event) => event.id === id ? {...event, status: !event.status} : event));
+		completeServerEvent(id).then((events) => changeEvents(events));
 	}
 
 	function convertDistance(distance, distanceType, id) {
