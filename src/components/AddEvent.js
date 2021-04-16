@@ -12,7 +12,6 @@ function AddEvent(props) {
     e.preventDefault();
     let time = `${hours} Hours and ${minutes} Minutes`;
     let event = {
-      id: Math.random(),
       type,
       distance,
       distanceType,
@@ -30,23 +29,23 @@ function AddEvent(props) {
   return (
     <form onSubmit={submitForm}>
       <div>
-        <label for="type">Type of workout</label>
+        <label htmlFor="type">Type of workout</label>
         <input required id="type" name="type" type="text" value={type} onChange={(e) => changeType(e.target.value)}/>
       </div>
       <div>
-        <label for="distance">Distance Traveled</label>
+        <label htmlFor="distance">Distance Traveled</label>
         <input required id="distance" name="distance" type="number" value={distance} onChange={(e) => changeDistance(e.target.value)}/>
       </div>
       <div>
-        <label for="hours">Hours</label>
+        <label htmlFor="hours">Hours</label>
         <input required id="hours" name="hours" type="number" value={hours} onChange={(e) => changeHours(e.target.value)}/>
       </div>
       <div>
-        <label for="minutes">Minutes</label>
+        <label htmlFor="minutes">Minutes</label>
         <input required id="minutes" name="minutes" type="number" min="0" max="59" value={minutes} onChange={(e) => changeMinutes(e.target.value)}/>
       </div>
       <div>
-        <label for="distance-type">Distance Type</label>
+        <label htmlFor="distance-type">Distance Type</label>
         <select id="distance-type" name="distance-type" value={distanceType} onChange={(e) => changeDistanceType(e.target.value)}>
           <option default value="Miles">Miles</option>
           <option value="Kilometers">Kilometers</option>
@@ -54,7 +53,7 @@ function AddEvent(props) {
         </select>
       </div>
       <div>
-        <label for="complete">Completed</label>
+        <label htmlFor="complete">Completed</label>
         <input id="complete" name="complete" type="checkbox" value={status} onChange={(e) => changeStatus(e.target.value)}/>
       </div>
       <button type="submit">Submit</button>

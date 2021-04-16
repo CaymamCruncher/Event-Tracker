@@ -14,29 +14,30 @@ function App() {
 	}, []);
 
 	function deleteEvent(id) {
-		deleteServerEvent(id).then((events) => changeEvents(events));
+		deleteServerEvent(id).then((id) => changeEvents(events.filter((event) => (event._id !== id))));
 	}
 
 	function addEvent(event) {
 		addServerEvent(event).then((event) => {
+			console.log(event);
 			changeEvents([...events, event]);
 		})
 	}
 
-	function completeEvent(id) {
-		completeServerEvent(id).then((events) => changeEvents(events));
+	function completeEvent(id, event) {
+		completeServerEvent(id, event).then((id) => changeEvents(events.map((event) => event._id === id ? {...event, status: !event.status} : event)));
 	}
 
 	function convertDistance(distance, distanceType, id) {
 		switch(distanceType) {
 			case 'Miles': 
-				changeEvents(events.map((event) => event.id === id ? {...event, distance: Math.round((distance * 1.60934) * 100)/100, distanceType: 'Kilometers'} : event));
+				changeEvents(events.map((event) => event._id === id ? {...event, distance: Math.round((distance * 1.60934) * 100)/100, distanceType: 'Kilometers'} : event));
 				break;
 			case 'Kilometers':
-				changeEvents(events.map((event) => event.id === id ? {...event, distance: Math.round((distance * 3281) * 100)/100, distanceType: 'Feet'} : event));
+				changeEvents(events.map((event) => event._id === id ? {...event, distance: Math.round((distance * 3281) * 100)/100, distanceType: 'Feet'} : event));
 				break;
 			default:
-				changeEvents(events.map((event) => event.id === id ? {...event, distance: Math.round((distance/5280) * 100)/100, distanceType: 'Miles'} : event));
+				changeEvents(events.map((event) => event._id === id ? {...event, distance: Math.round((distance/5280) * 100)/100, distanceType: 'Miles'} : event));
 				break;
 		}
 	}

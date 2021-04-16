@@ -29,9 +29,9 @@ export function deleteServerEvent(id) {
 	)
 }
 
-export function completeServerEvent(id) {
+export function completeServerEvent(id, event) {
 	return (
-		fetch(`${url}/${id}`, { method: 'PUT', headers })
+		fetch(`${url}/${id}`, { method: 'PUT', body: JSON.stringify(event), headers })
 		.then(res => res.json())
 		.catch(err => console.warn(err))
 	)

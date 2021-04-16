@@ -17,7 +17,7 @@ function ListEvents(props) {
   return (
     <ul>
       {filteredEvents.map((event) => (
-        <li key={event.id}>
+        <li key={event._id}>
           <Event event={event} deleteEvent={deleteEvent} completeEvent={completeEvent} convertDistance={convertDistance}/>
         </li>
       ))}

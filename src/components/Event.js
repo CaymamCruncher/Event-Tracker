@@ -11,9 +11,9 @@ function Event(props) {
         <dt>Status:</dt>
         <dd>{event.status ? 'Finished' : 'Active'}</dd>
       </dl>
-      <button onClick={() => deleteEvent(event.id)}>Delete</button>
-      <button onClick={() => completeEvent(event.id)}>Complete</button>
-      <button onClick={() => convertDistance(event.distance, event.distanceType, event.id)}>Change Distance Type</button>
+      <button onClick={() => deleteEvent(event._id)}>Delete</button>
+      <button onClick={() => completeEvent(event._id, event)}>Complete</button>
+      <button onClick={() => convertDistance(event.distance, event.distanceType, event._id)}>Change Distance Type</button>
     </article>
   )
 }
